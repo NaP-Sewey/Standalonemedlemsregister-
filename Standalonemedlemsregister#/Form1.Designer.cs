@@ -115,6 +115,7 @@
             Signup1.TabIndex = 12;
             Signup1.Text = "Sign up";
             Signup1.UseVisualStyleBackColor = false;
+            Signup1.Click += Signup1_Click;
             // 
             // Form1
             // 
