@@ -37,11 +37,16 @@ namespace Standalonemedlemsregister_
 
 
 
-            string Username = File.ReadAllText(path);
-            string Password = File.ReadAllText(path2);
+            string [] readallusernames = File.ReadAllLines(path);
+            string [] readallpasswords = File.ReadAllLines(path2);
 
-            MessageBox.Show(Username + "," + Password);
-            if (textboxusername.Text == Username && textboxpassword.Text == Password)
+            int data = Array.IndexOf(readallusernames, username);
+
+            MessageBox.Show(readallusernames + "," + readallpasswords);
+
+            if (data >= 0 && data < readallpasswords.Length)
+
+                if (readallpasswords [data] == password)
             {
                 MessageBox.Show("");
                 Main main = new Main();
@@ -59,6 +64,12 @@ namespace Standalonemedlemsregister_
 
         private void Signup1_Click(object sender, EventArgs e)
         {
+            InitializeComponent();
+
+            this.Hide();
+
+            Form2 form2 = new Form2();
+            form2.Show();
 
 
         }
