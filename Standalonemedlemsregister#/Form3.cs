@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Standalonemedlemsregister_
 {
@@ -31,13 +33,16 @@ namespace Standalonemedlemsregister_
             {
                 string[] s = linje.Split(',');
 
-                if (s.Length >= 4) // nu kun 4 felter
+                if (s.Length >= 6) 
                 {
                     string brugernavn = s[0];
                     string mail = s[2];
-                    string status = s[3];
+                    string navn = s[3];
+                    string phonenumber = s[4];
+                    string status = s[5];
 
-                    listBox1.Items.Add($"Brugernavn: {brugernavn}, Mail: {mail}, Status: {status}");
+                    listBox1.Items.Add($"Brugernavn: {brugernavn}, Mail: {mail}, Navn: {navn}, Tlf.nr: {phonenumber}, Status: {status}");
+                    
                 }
             }
         }
