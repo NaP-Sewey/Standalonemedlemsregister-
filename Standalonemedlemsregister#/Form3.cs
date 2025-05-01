@@ -30,14 +30,14 @@ namespace Standalonemedlemsregister_
             foreach (string linje in alleBrugere)
             {
                 string[] s = linje.Split(',');
-                if (s.Length >= 5)
+
+                if (s.Length >= 4) // nu kun 4 felter
                 {
                     string brugernavn = s[0];
-                    string navn = s[2];
-                    string mail = s[3];
-                    string status = s[4];
+                    string mail = s[2];
+                    string status = s[3];
 
-                    listBox1.Items.Add($"Brugernavn: {brugernavn}, Navn: {navn}, Status: {status}");
+                    listBox1.Items.Add($"Brugernavn: {brugernavn}, Mail: {mail}, Status: {status}");
                 }
             }
         }

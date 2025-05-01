@@ -1,7 +1,10 @@
 namespace Standalonemedlemsregister_
 {
+
     public partial class Form1 : Form
     {
+        public static string Bruger = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -41,6 +44,7 @@ namespace Standalonemedlemsregister_
             string [] readallpasswords = File.ReadAllLines(path2);
 
             int data = Array.IndexOf(readallusernames, username);
+            Form1.Bruger = username;
 
 
             if (data >= 0 && data < readallpasswords.Length)

@@ -39,6 +39,8 @@
             MailTextbox = new TextBox();
             PhoneNumber = new Label();
             PhoneNumberTextbox = new TextBox();
+            navnbox = new TextBox();
+            label2 = new Label();
             SuspendLayout();
             // 
             // Signup1
@@ -48,10 +50,9 @@
             Signup1.FlatStyle = FlatStyle.Flat;
             Signup1.Font = new Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Signup1.ForeColor = Color.Black;
-            Signup1.Location = new Point(329, 394);
-            Signup1.Margin = new Padding(3, 4, 3, 4);
+            Signup1.Location = new Point(288, 296);
             Signup1.Name = "Signup1";
-            Signup1.Size = new Size(114, 43);
+            Signup1.Size = new Size(100, 32);
             Signup1.TabIndex = 13;
             Signup1.Text = "Sign up";
             Signup1.UseVisualStyleBackColor = false;
@@ -61,17 +62,18 @@
             // 
             Username1.AutoSize = true;
             Username1.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Username1.Location = new Point(329, 26);
+            Username1.Location = new Point(288, 20);
             Username1.Name = "Username1";
-            Username1.Size = new Size(109, 24);
+            Username1.Size = new Size(88, 19);
             Username1.TabIndex = 15;
             Username1.Text = "Username";
             // 
             // textboxusername
             // 
-            textboxusername.Location = new Point(247, 53);
+            textboxusername.Location = new Point(216, 40);
+            textboxusername.Margin = new Padding(3, 2, 3, 2);
             textboxusername.Name = "textboxusername";
-            textboxusername.Size = new Size(267, 27);
+            textboxusername.Size = new Size(234, 23);
             textboxusername.TabIndex = 14;
             textboxusername.TextChanged += textboxusername_TextChanged;
             // 
@@ -79,17 +81,19 @@
             // 
             Password1.AutoSize = true;
             Password1.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Password1.Location = new Point(329, 258);
+            Password1.Location = new Point(288, 194);
             Password1.Name = "Password1";
-            Password1.Size = new Size(104, 24);
+            Password1.Size = new Size(84, 19);
             Password1.TabIndex = 17;
             Password1.Text = "Password";
+            Password1.Click += Password1_Click;
             // 
             // textboxpassword
             // 
-            textboxpassword.Location = new Point(247, 285);
+            textboxpassword.Location = new Point(216, 214);
+            textboxpassword.Margin = new Padding(3, 2, 3, 2);
             textboxpassword.Name = "textboxpassword";
-            textboxpassword.Size = new Size(267, 27);
+            textboxpassword.Size = new Size(234, 23);
             textboxpassword.TabIndex = 16;
             textboxpassword.TextChanged += textboxpassword_TextChanged;
             // 
@@ -97,17 +101,18 @@
             // 
             Confirmpassword.AutoSize = true;
             Confirmpassword.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Confirmpassword.Location = new Point(297, 321);
+            Confirmpassword.Location = new Point(260, 241);
             Confirmpassword.Name = "Confirmpassword";
-            Confirmpassword.Size = new Size(186, 24);
+            Confirmpassword.Size = new Size(151, 19);
             Confirmpassword.TabIndex = 19;
             Confirmpassword.Text = "ConfirmPassword";
             // 
             // ConfirmPasswordTextbox
             // 
-            ConfirmPasswordTextbox.Location = new Point(247, 348);
+            ConfirmPasswordTextbox.Location = new Point(216, 261);
+            ConfirmPasswordTextbox.Margin = new Padding(3, 2, 3, 2);
             ConfirmPasswordTextbox.Name = "ConfirmPasswordTextbox";
-            ConfirmPasswordTextbox.Size = new Size(267, 27);
+            ConfirmPasswordTextbox.Size = new Size(234, 23);
             ConfirmPasswordTextbox.TabIndex = 18;
             ConfirmPasswordTextbox.TextChanged += ConfirmPasswordTextbox_TextChanged;
             // 
@@ -115,17 +120,18 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(356, 83);
+            label1.Location = new Point(312, 62);
             label1.Name = "label1";
-            label1.Size = new Size(57, 24);
+            label1.Size = new Size(47, 19);
             label1.TabIndex = 21;
             label1.Text = "Mail";
             // 
             // MailTextbox
             // 
-            MailTextbox.Location = new Point(247, 110);
+            MailTextbox.Location = new Point(216, 82);
+            MailTextbox.Margin = new Padding(3, 2, 3, 2);
             MailTextbox.Name = "MailTextbox";
-            MailTextbox.Size = new Size(267, 27);
+            MailTextbox.Size = new Size(234, 23);
             MailTextbox.TabIndex = 20;
             MailTextbox.TextChanged += MailTextbox_TextChanged;
             // 
@@ -133,25 +139,47 @@
             // 
             PhoneNumber.AutoSize = true;
             PhoneNumber.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PhoneNumber.Location = new Point(315, 153);
+            PhoneNumber.Location = new Point(276, 115);
             PhoneNumber.Name = "PhoneNumber";
-            PhoneNumber.Size = new Size(149, 24);
+            PhoneNumber.Size = new Size(120, 19);
             PhoneNumber.TabIndex = 23;
             PhoneNumber.Text = "Phonenumber";
             // 
             // PhoneNumberTextbox
             // 
-            PhoneNumberTextbox.Location = new Point(247, 180);
+            PhoneNumberTextbox.Location = new Point(216, 135);
+            PhoneNumberTextbox.Margin = new Padding(3, 2, 3, 2);
             PhoneNumberTextbox.Name = "PhoneNumberTextbox";
-            PhoneNumberTextbox.Size = new Size(267, 27);
+            PhoneNumberTextbox.Size = new Size(234, 23);
             PhoneNumberTextbox.TabIndex = 22;
             PhoneNumberTextbox.TextChanged += PhoneNumberTextbox_TextChanged;
             // 
+            // navnbox
+            // 
+            navnbox.Location = new Point(454, 177);
+            navnbox.Margin = new Padding(3, 2, 3, 2);
+            navnbox.Name = "navnbox";
+            navnbox.Size = new Size(234, 23);
+            navnbox.TabIndex = 24;
+            navnbox.TextChanged += textBox1_TextChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(547, 156);
+            label2.Name = "label2";
+            label2.Size = new Size(50, 19);
+            label2.TabIndex = 25;
+            label2.Text = "Navn";
+            // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
+            Controls.Add(label2);
+            Controls.Add(navnbox);
             Controls.Add(PhoneNumber);
             Controls.Add(PhoneNumberTextbox);
             Controls.Add(label1);
@@ -163,6 +191,7 @@
             Controls.Add(Username1);
             Controls.Add(textboxusername);
             Controls.Add(Signup1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form2";
             Text = "Form2";
             ResumeLayout(false);
@@ -182,5 +211,7 @@
         private TextBox MailTextbox;
         private Label PhoneNumber;
         private TextBox PhoneNumberTextbox;
+        private TextBox navnbox;
+        private Label label2;
     }
 }

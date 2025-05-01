@@ -25,11 +25,13 @@ namespace Standalonemedlemsregister_
             string path3 = "Database\\Mail.txt";//Paths
             string path4 = "Database\\Navn.txt";//Paths
             string path5 = "Database\\tlfnum.txt";//Paths
+            string path6 = "Database\\Users.txt";//Paths
 
             // Herunder er de forskellige data hvor der bliver hentet brugerinput fra de tekstboxe som er brugt.
             string username = textboxusername.Text; // Data
             string password = textboxpassword.Text;// Data
             string mail = MailTextbox.Text; // Data
+            string navn = navnbox.Text; // Data
             string phonenumber = PhoneNumberTextbox.Text; // Data
             string confirmPassword = ConfirmPasswordTextbox.Text;
 
@@ -44,91 +46,40 @@ namespace Standalonemedlemsregister_
                 MessageBox.Show("PASSWORDS DOES NOT MATCH");
                 return;
             }
-
-            if (!File.Exists(username)) using (StreamWriter sw = File.CreateText(username))
-
-                {
-
-                    sw.WriteLine("Username existere ikke!");
-
-
-                    sw.Close();
-
-                }
-
-            if (!File.Exists(password)) using (StreamWriter sw = File.CreateText(password))
-
-                {
-
-                    sw.WriteLine("Password existere ikke!");
-
-
-                    sw.Close();
-
-                }
-;
-            if (!File.Exists(mail)) using (StreamWriter sw = File.CreateText(mail))
-
-                {
-
-                    sw.WriteLine("Mail existere ikke!");
-
-
-                    sw.Close();
-
-                }
-;
-            if (!File.Exists(phonenumber)) using (StreamWriter sw = File.CreateText(phonenumber))
-
-                {
-
-                    sw.WriteLine("Phonenumber existere ikke!");
-
-
-                    sw.Close();
-
-                }
 ;
 
 
 
 
-            using (StreamReader sr = File.OpenText(path))
+            string[] existingUsers = File.ReadAllLines(path);
+            if (existingUsers.Contains(username))
             {
-                using (StreamWriter sw = File.CreateText(path2))
-                {
-                    string line;
-
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        string[] substring = line.Split(',');
-
-                        string[] existingUsers = File.ReadAllLines(path);
-                        if (Array.Exists(existingUsers, user => user == username))
-                        {
-                            MessageBox.Show("Username is USED");
-                            return;
-                        }
-                    }
-
-                    sw.Close();
-
-                }
-
-
+                MessageBox.Show("Username is USED");
+                return;
 
             }
 
-            CreateFile(path);
-            CreateFile(path2);
-            CreateFile(path3);
-            CreateFile(path4);
 
-            // Putter username ind i username.txt, Password ind i Password.txt, mail ind i mail.txt og Phonenumber ind i phonenumber.txt
+
+
+            // Write data after ensuring no conflicts
             File.AppendAllText(path, username + Environment.NewLine);
             File.AppendAllText(path2, password + Environment.NewLine);
             File.AppendAllText(path3, mail + Environment.NewLine);
+            File.AppendAllText(path4, navn + Environment.NewLine);
             File.AppendAllText(path5, phonenumber + Environment.NewLine);
+            File.AppendAllText(path6, $"{username},{password},{mail},{navn},{phonenumber},passiv" + Environment.NewLine);
+
+
+
+
+
+
+
+
+
+
+
 
             textboxusername.Clear();
             textboxpassword.Clear();
@@ -140,8 +91,8 @@ namespace Standalonemedlemsregister_
 
             this.Hide();
 
-            Form3 form3 = new Form3();
-            form3.Show();
+            Form1 form1 = new Form1();
+            form1.Show();
 
 
 
@@ -187,6 +138,16 @@ namespace Standalonemedlemsregister_
         }
 
         private void textboxpassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Password1_Click(object sender, EventArgs e)
         {
 
         }
