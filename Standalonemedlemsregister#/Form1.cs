@@ -42,21 +42,32 @@ namespace Standalonemedlemsregister_
 
             int data = Array.IndexOf(readallusernames, username);
 
-            MessageBox.Show(readallusernames + "," + readallpasswords);
 
             if (data >= 0 && data < readallpasswords.Length)
 
                 if (readallpasswords [data] == password)
             {
-                MessageBox.Show("");
-                Main main = new Main();
-                main.Show();
+                    if(data == 0)
+                    {
+                   
+                        MessageBox.Show("Du er Administrator");
+                        Form3 form3 = new Form3();
+                        form3.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Du er Bruger");
+                        Main main = new Main();
+                        main.Show();
+                    }
+                   
+                
             }
             else
             {
                 MessageBox.Show("Brugernavn eller Adgangskode er forkert!");
             }
-            this.Hide();
+            
 
 
 
