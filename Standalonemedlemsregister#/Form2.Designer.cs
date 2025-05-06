@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Signup1 = new Button();
             Username1 = new Label();
             textboxusername = new TextBox();
             Password1 = new Label();
@@ -41,36 +40,27 @@
             PhoneNumberTextbox = new TextBox();
             navnbox = new TextBox();
             label2 = new Label();
+            Signup1 = new Button();
+            panel1 = new Panel();
+            textBox1 = new TextBox();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // Signup1
-            // 
-            Signup1.BackColor = Color.FromArgb(255, 128, 128);
-            Signup1.BackgroundImageLayout = ImageLayout.None;
-            Signup1.FlatStyle = FlatStyle.Flat;
-            Signup1.Font = new Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Signup1.ForeColor = Color.Black;
-            Signup1.Location = new Point(288, 296);
-            Signup1.Name = "Signup1";
-            Signup1.Size = new Size(100, 32);
-            Signup1.TabIndex = 13;
-            Signup1.Text = "Sign up";
-            Signup1.UseVisualStyleBackColor = false;
-            Signup1.Click += Signup1_Click;
             // 
             // Username1
             // 
             Username1.AutoSize = true;
             Username1.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Username1.Location = new Point(288, 20);
+            Username1.ForeColor = Color.SkyBlue;
+            Username1.Location = new Point(112, 145);
             Username1.Name = "Username1";
-            Username1.Size = new Size(88, 19);
+            Username1.Size = new Size(101, 19);
             Username1.TabIndex = 15;
-            Username1.Text = "Username";
+            Username1.Text = "Brugernavn";
             // 
             // textboxusername
             // 
-            textboxusername.Location = new Point(216, 40);
+            textboxusername.BorderStyle = BorderStyle.FixedSingle;
+            textboxusername.Location = new Point(53, 166);
             textboxusername.Margin = new Padding(3, 2, 3, 2);
             textboxusername.Name = "textboxusername";
             textboxusername.Size = new Size(234, 23);
@@ -81,7 +71,8 @@
             // 
             Password1.AutoSize = true;
             Password1.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Password1.Location = new Point(288, 194);
+            Password1.ForeColor = Color.SkyBlue;
+            Password1.Location = new Point(129, 404);
             Password1.Name = "Password1";
             Password1.Size = new Size(84, 19);
             Password1.TabIndex = 17;
@@ -90,7 +81,8 @@
             // 
             // textboxpassword
             // 
-            textboxpassword.Location = new Point(216, 214);
+            textboxpassword.BorderStyle = BorderStyle.FixedSingle;
+            textboxpassword.Location = new Point(53, 425);
             textboxpassword.Margin = new Padding(3, 2, 3, 2);
             textboxpassword.Name = "textboxpassword";
             textboxpassword.Size = new Size(234, 23);
@@ -101,7 +93,8 @@
             // 
             Confirmpassword.AutoSize = true;
             Confirmpassword.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Confirmpassword.Location = new Point(260, 241);
+            Confirmpassword.ForeColor = Color.SkyBlue;
+            Confirmpassword.Location = new Point(99, 461);
             Confirmpassword.Name = "Confirmpassword";
             Confirmpassword.Size = new Size(151, 19);
             Confirmpassword.TabIndex = 19;
@@ -109,7 +102,8 @@
             // 
             // ConfirmPasswordTextbox
             // 
-            ConfirmPasswordTextbox.Location = new Point(216, 261);
+            ConfirmPasswordTextbox.BorderStyle = BorderStyle.FixedSingle;
+            ConfirmPasswordTextbox.Location = new Point(53, 482);
             ConfirmPasswordTextbox.Margin = new Padding(3, 2, 3, 2);
             ConfirmPasswordTextbox.Name = "ConfirmPasswordTextbox";
             ConfirmPasswordTextbox.Size = new Size(234, 23);
@@ -120,7 +114,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(312, 62);
+            label1.ForeColor = Color.SkyBlue;
+            label1.Location = new Point(139, 265);
             label1.Name = "label1";
             label1.Size = new Size(47, 19);
             label1.TabIndex = 21;
@@ -128,7 +123,8 @@
             // 
             // MailTextbox
             // 
-            MailTextbox.Location = new Point(216, 82);
+            MailTextbox.BorderStyle = BorderStyle.FixedSingle;
+            MailTextbox.Location = new Point(53, 286);
             MailTextbox.Margin = new Padding(3, 2, 3, 2);
             MailTextbox.Name = "MailTextbox";
             MailTextbox.Size = new Size(234, 23);
@@ -139,24 +135,27 @@
             // 
             PhoneNumber.AutoSize = true;
             PhoneNumber.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PhoneNumber.Location = new Point(276, 115);
+            PhoneNumber.ForeColor = Color.SkyBlue;
+            PhoneNumber.Location = new Point(76, 229);
             PhoneNumber.Name = "PhoneNumber";
-            PhoneNumber.Size = new Size(120, 19);
+            PhoneNumber.Size = new Size(55, 19);
             PhoneNumber.TabIndex = 23;
-            PhoneNumber.Text = "Phonenumber";
+            PhoneNumber.Text = "Tlf.nr";
             // 
             // PhoneNumberTextbox
             // 
-            PhoneNumberTextbox.Location = new Point(216, 135);
+            PhoneNumberTextbox.BorderStyle = BorderStyle.FixedSingle;
+            PhoneNumberTextbox.Location = new Point(156, 229);
             PhoneNumberTextbox.Margin = new Padding(3, 2, 3, 2);
             PhoneNumberTextbox.Name = "PhoneNumberTextbox";
-            PhoneNumberTextbox.Size = new Size(234, 23);
+            PhoneNumberTextbox.Size = new Size(131, 23);
             PhoneNumberTextbox.TabIndex = 22;
             PhoneNumberTextbox.TextChanged += PhoneNumberTextbox_TextChanged;
             // 
             // navnbox
             // 
-            navnbox.Location = new Point(454, 177);
+            navnbox.BorderStyle = BorderStyle.FixedSingle;
+            navnbox.Location = new Point(53, 73);
             navnbox.Margin = new Padding(3, 2, 3, 2);
             navnbox.Name = "navnbox";
             navnbox.Size = new Size(234, 23);
@@ -167,40 +166,76 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(547, 156);
+            label2.ForeColor = Color.SkyBlue;
+            label2.Location = new Point(139, 52);
             label2.Name = "label2";
             label2.Size = new Size(50, 19);
             label2.TabIndex = 25;
             label2.Text = "Navn";
             // 
+            // Signup1
+            // 
+            Signup1.BackColor = Color.FromArgb(255, 128, 128);
+            Signup1.BackgroundImageLayout = ImageLayout.None;
+            Signup1.FlatStyle = FlatStyle.Flat;
+            Signup1.Font = new Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Signup1.ForeColor = Color.Black;
+            Signup1.Location = new Point(113, 551);
+            Signup1.Name = "Signup1";
+            Signup1.Size = new Size(100, 32);
+            Signup1.TabIndex = 13;
+            Signup1.Text = "Sign up";
+            Signup1.UseVisualStyleBackColor = false;
+            Signup1.Click += Signup1_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.BackgroundImageLayout = ImageLayout.None;
+            panel1.Controls.Add(Username1);
+            panel1.Controls.Add(textboxusername);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(navnbox);
+            panel1.Controls.Add(Signup1);
+            panel1.Controls.Add(PhoneNumberTextbox);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(textboxpassword);
+            panel1.Controls.Add(Password1);
+            panel1.Controls.Add(PhoneNumber);
+            panel1.Controls.Add(MailTextbox);
+            panel1.Controls.Add(ConfirmPasswordTextbox);
+            panel1.Controls.Add(Confirmpassword);
+            panel1.Location = new Point(163, 12);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(331, 596);
+            panel1.TabIndex = 26;
+            panel1.Paint += panel1_Paint;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(86, 334);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(164, 23);
+            textBox1.TabIndex = 21;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
-            Controls.Add(label2);
-            Controls.Add(navnbox);
-            Controls.Add(PhoneNumber);
-            Controls.Add(PhoneNumberTextbox);
-            Controls.Add(label1);
-            Controls.Add(MailTextbox);
-            Controls.Add(Confirmpassword);
-            Controls.Add(ConfirmPasswordTextbox);
-            Controls.Add(Password1);
-            Controls.Add(textboxpassword);
-            Controls.Add(Username1);
-            Controls.Add(textboxusername);
-            Controls.Add(Signup1);
+            BackColor = Color.Silver;
+            ClientSize = new Size(666, 650);
+            Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form2";
             Text = "Form2";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button Signup1;
         private Label Username1;
         private TextBox textboxusername;
         private Label Password1;
@@ -213,5 +248,8 @@
         private TextBox PhoneNumberTextbox;
         private TextBox navnbox;
         private Label label2;
+        private Button Signup1;
+        private Panel panel1;
+        private TextBox textBox1;
     }
 }

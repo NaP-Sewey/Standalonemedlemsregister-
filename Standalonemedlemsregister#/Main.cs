@@ -34,17 +34,32 @@ namespace Standalonemedlemsregister_
                     string navn = s[3];
                     string phonenumber = s[4];
                     string status = s[5];
-                    if (username == Form1.Bruger)
+                    if (username == Form1.Bruger) // Den her tjekker om brugernavnet i linjen er det samme som det brugernavn der er logget ind med
                     {
-                        listBox1.Items.Add($"Brugernavn: {username}, Mail: {mail}, Navn: {navn},Tlf.Nr: {phonenumber} ,  Status: {status}");
-                        break;
+                        listBox1.Items.Add($"Brugernavn: {username}");
+                        listBox1.Items.Add("");
+                        listBox1.Items.Add($"Mail: {mail}");
+                        listBox1.Items.Add("");
+                        listBox1.Items.Add($"Navn: {navn}");
+                        listBox1.Items.Add("");
+                        listBox1.Items.Add($"Tlf.Nr: {phonenumber}");
+                        listBox1.Items.Add("");
+                        listBox1.Items.Add($"Status: {status}");
                         
+
+                        break;
+
                     }
                 }
             }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

@@ -29,32 +29,63 @@
         private void InitializeComponent()
         {
             listBox1 = new ListBox();
+            panel1 = new Panel();
+            label1 = new Label();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // listBox1
             // 
+            listBox1.BorderStyle = BorderStyle.None;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 12);
+            listBox1.Location = new Point(25, 46);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(641, 424);
+            listBox1.Size = new Size(629, 435);
             listBox1.TabIndex = 0;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.SkyBlue;
+            panel1.Controls.Add(label1);
+            panel1.ForeColor = Color.White;
+            panel1.Location = new Point(25, 12);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(629, 38);
+            panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Rockwell", 12F, FontStyle.Bold);
+            label1.Location = new Point(3, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 19);
+            label1.TabIndex = 0;
+            label1.Text = "Bruger";
+            label1.Click += label1_Click;
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Silver;
+            ClientSize = new Size(683, 507);
             Controls.Add(listBox1);
+            Controls.Add(panel1);
             Name = "Main";
             Text = "Main";
             Load += Main_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private ListBox listBox1;
+        private Panel panel1;
+        private Label label1;
     }
 }

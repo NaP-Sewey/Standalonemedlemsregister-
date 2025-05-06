@@ -40,20 +40,26 @@ namespace Standalonemedlemsregister_
 
 
 
-            string [] readallusernames = File.ReadAllLines(path);
-            string [] readallpasswords = File.ReadAllLines(path2);
+            string[] readallusernames = File.ReadAllLines(path);
+            string[] readallpasswords = File.ReadAllLines(path2);
 
             int data = Array.IndexOf(readallusernames, username);
             Form1.Bruger = username;
 
+            if (data == -1)
+            {
+                MessageBox.Show("Brugernavn eller Adgangskode er forkert");
+                return;
+            }
+
 
             if (data >= 0 && data < readallpasswords.Length)
 
-                if (readallpasswords [data] == password)
-            {
-                    if(data == 0)
+                if (readallpasswords[data] == password)
+                {
+                    if (data == 0)
                     {
-                   
+
                         MessageBox.Show("Du er Administrator");
                         Form3 form3 = new Form3();
                         form3.Show();
@@ -64,14 +70,14 @@ namespace Standalonemedlemsregister_
                         Main main = new Main();
                         main.Show();
                     }
-                   
-                
-            }
-            else
-            {
-                MessageBox.Show("Brugernavn eller Adgangskode er forkert!");
-            }
-            
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Brugernavn eller Adgangskode er forkert");
+                }
+
 
 
 
@@ -86,6 +92,26 @@ namespace Standalonemedlemsregister_
             Form2 form2 = new Form2();
             form2.Show();
 
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textboxpassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
 
         }
     }

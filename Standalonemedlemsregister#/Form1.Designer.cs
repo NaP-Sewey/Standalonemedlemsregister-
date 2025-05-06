@@ -29,59 +29,58 @@
         private void InitializeComponent()
         {
             textboxusername = new TextBox();
-            label1 = new Label();
             textboxpassword = new TextBox();
             Username1 = new Label();
             Password1 = new Label();
             Login1 = new Button();
             Signup1 = new Button();
+            label1 = new Label();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // textboxusername
             // 
-            textboxusername.Location = new Point(185, 169);
+            textboxusername.BackColor = Color.White;
+            textboxusername.BorderStyle = BorderStyle.FixedSingle;
+            textboxusername.Location = new Point(162, 127);
+            textboxusername.Margin = new Padding(3, 2, 3, 2);
             textboxusername.Name = "textboxusername";
-            textboxusername.Size = new Size(267, 27);
+            textboxusername.Size = new Size(234, 23);
             textboxusername.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.White;
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Font = new Font("Rockwell", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(165, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(304, 44);
-            label1.TabIndex = 2;
-            label1.Text = "Medlemsregister";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
             // 
             // textboxpassword
             // 
-            textboxpassword.Location = new Point(185, 325);
+            textboxpassword.BackColor = Color.Snow;
+            textboxpassword.BorderStyle = BorderStyle.FixedSingle;
+            textboxpassword.Location = new Point(162, 244);
+            textboxpassword.Margin = new Padding(3, 2, 3, 2);
             textboxpassword.Name = "textboxpassword";
-            textboxpassword.Size = new Size(267, 27);
+            textboxpassword.Size = new Size(234, 23);
             textboxpassword.TabIndex = 3;
+            textboxpassword.TextChanged += textboxpassword_TextChanged;
             // 
             // Username1
             // 
             Username1.AutoSize = true;
+            Username1.BackColor = Color.White;
             Username1.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Username1.Location = new Point(267, 142);
+            Username1.ForeColor = Color.SkyBlue;
+            Username1.Location = new Point(234, 106);
             Username1.Name = "Username1";
-            Username1.Size = new Size(109, 24);
+            Username1.Size = new Size(88, 19);
             Username1.TabIndex = 4;
             Username1.Text = "Username";
             // 
             // Password1
             // 
             Password1.AutoSize = true;
+            Password1.BackColor = Color.White;
             Password1.Font = new Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Password1.Location = new Point(267, 298);
+            Password1.ForeColor = Color.SkyBlue;
+            Password1.Location = new Point(234, 224);
             Password1.Name = "Password1";
-            Password1.Size = new Size(104, 24);
+            Password1.Size = new Size(84, 19);
             Password1.TabIndex = 5;
             Password1.Text = "Password";
             // 
@@ -92,10 +91,9 @@
             Login1.FlatStyle = FlatStyle.Flat;
             Login1.Font = new Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Login1.ForeColor = Color.Black;
-            Login1.Location = new Point(197, 419);
-            Login1.Margin = new Padding(3, 4, 3, 4);
+            Login1.Location = new Point(71, 273);
             Login1.Name = "Login1";
-            Login1.Size = new Size(114, 43);
+            Login1.Size = new Size(100, 32);
             Login1.TabIndex = 11;
             Login1.Text = "Login";
             Login1.UseVisualStyleBackColor = false;
@@ -108,41 +106,73 @@
             Signup1.FlatStyle = FlatStyle.Flat;
             Signup1.Font = new Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Signup1.ForeColor = Color.Black;
-            Signup1.Location = new Point(317, 419);
-            Signup1.Margin = new Padding(3, 4, 3, 4);
+            Signup1.Location = new Point(177, 273);
             Signup1.Name = "Signup1";
-            Signup1.Size = new Size(114, 43);
+            Signup1.Size = new Size(100, 32);
             Signup1.TabIndex = 12;
             Signup1.Text = "Sign up";
             Signup1.UseVisualStyleBackColor = false;
             Signup1.Click += Signup1_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.White;
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Enabled = false;
+            label1.Font = new Font("Rockwell Extra Bold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.SkyBlue;
+            label1.Location = new Point(108, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(138, 34);
+            label1.TabIndex = 2;
+            label1.Text = "Log ind";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.UseWaitCursor = true;
+            label1.Click += label1_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(224, 224, 224);
+            panel1.BackgroundImageLayout = ImageLayout.None;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(Signup1);
+            panel1.Controls.Add(Login1);
+            panel1.Location = new Point(99, 9);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(351, 337);
+            panel1.TabIndex = 13;
+            panel1.Paint += panel1_Paint;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PapayaWhip;
-            ClientSize = new Size(618, 493);
-            Controls.Add(Signup1);
-            Controls.Add(Login1);
-            Controls.Add(Password1);
+            BackColor = Color.Silver;
+            ClientSize = new Size(541, 370);
             Controls.Add(Username1);
-            Controls.Add(textboxpassword);
-            Controls.Add(label1);
             Controls.Add(textboxusername);
+            Controls.Add(Password1);
+            Controls.Add(textboxpassword);
+            Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private TextBox textboxusername;
-        private Label label1;
         private TextBox textboxpassword;
         private Label Username1;
         private Label Password1;
         private Button Login1;
         private Button Signup1;
+        private Label label1;
+        private Panel panel1;
     }
 }
